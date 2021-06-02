@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# DNA
+#
+# author: ?
+
+for j in f b; do
+  for i in {0..7}; do
+    printf -v $j$i %b "\e[${!j}${i}m"
+  done
+done
+
+for i in {0..7}; do
+    printf -v g$i %b "\e[9${i}m"
+done
+
+bd=$'\e[1m'
+rt=$'\e[0m'
+iv=$'\e[7m'
+
+# Symbols:
+# █ ■ ▄ ▀ ▐ ▌ ▬ ▓ ▒ ░  ● ═ ║ ╔ ╦ ╗ ╚ ╩ ╝ ▲ ▼ ◄ ►
+# ◐ ◑ ◒ ◓  ͻ ͼ ͽ Δ Ѻ ∟ ┌ ┐└ ┘┘
+
+# colors:
+# f0=black, f1=red, f2=green, f3=yellow, f4=blue
+# f5=magenta, f6=cyan, f7=white
+# g0=bright black, g1=bright red, g2=bright green, g3=bright yellow,
+# g4=bright blue, g5=bright magneta, g6=bright cyan, f7=bright white
+
+cat << EOF
+
+  $g1█-----$bd$g1█  $rt$g2█-----$bd$g2█$rt  $g3█-----$bd$g3█$rt  $g4█-----$bd$g4█$rt  $g5█-----$bd$g5█$rt  $g6█-----$bd$g6█$rt
+   $g1█---$bd$g1█$rt    $g2█---$bd$g2█$rt    $g3█---$bd$g3█$rt    $g4█---$bd$g4█$rt    $g5█---$bd$g5█$rt    $g6█---$bd$g6█$rt
+   $g1 █-$bd$g1█$rt     $g2 █-$bd$g2█$rt     $g3 █-$bd$g3█$rt     $g4 █-$bd$g4█$rt     $g5 █-$bd$g5█$rt     $g6 █-$bd$g6█$rt
+     $g1█$rt        $g2█$rt        $g3█$rt        $g4█$rt        $g5█$rt        $g6█$rt
+    $g1$bd$g1█-$rt$g1█$rt      $g2$bd$g2█_$rt$g2█$rt      $g3$bd$g3█-$rt$g3█$rt      $g4$bd$g4█-$rt$g4█$rt      $g5$bd$g5█-$rt$g5█$rt      $g6$bd$g6█-$rt$g6█$rt
+   $g1$bd$g1█---$rt$g1█$rt    $g2$bd$g2█---$rt$g2█$rt    $g3$bd$g3█---$rt$g3█$rt    $g4$bd$g4█---$rt$g4█$rt    $g5$bd$g5█---$rt$g5█$rt    $g6$bd$g6█---$rt$g6█$rt
+  $g1$bd$g1█-----$rt$g1█$rt  $g2$bd$g2█-----$rt$g2█$rt  $g3$bd$g3█-----$rt$g3█$rt  $g4$bd$g4█-----$rt$g4█$rt  $g5$bd$g5█-----$rt$g5█$rt  $g6$bd$g6█-----$rt$g6█$rt
+   $g1$bd$g1█---$rt$g1█$rt    $g2$bd$g2█---$rt$g2█$rt    $g3$bd$g3█---$rt$g3█$rt    $g4$bd$g4█---$rt$g4█$rt    $g5$bd$g5█---$rt$g5█$rt    $g6$bd$g6█---$rt$g6█$rt
+    $g1$bd$g1█-$rt$g1█$rt      $g2$bd$g2█-$rt$g2█$rt      $g3$bd$g3█-$rt$g3█$rt      $g4$bd$g4█-$rt$g4█$rt      $g5$bd$g5█-$rt$g5█$rt      $g6$bd$g6█-$rt$g6█$rt
+     $g1$bd$g1█$rt        $g2$bd$g2█$rt        $g3$bd$g3█$rt        $g4$bd$g4█$rt        $g5$bd$g5█$rt        $g6$bd$g6█$rt
+    $g1█-$bd$g1█$rt      $g2█-$bd$g2█$rt      $g3█-$bd$g3█$rt      $g4█-$bd$g4█$rt      $g5█-$bd$g5█$rt      $g6█-$bd$g6█$rt
+   $g1█---$bd$g1█$rt    $g2█---$bd$g2█$rt    $g3█---$bd$g3█$rt    $g4█---$bd$g4█$rt    $g5█---$bd$g5█$rt    $g6█---$bd$g6█$rt
+  $g1█-----$bd$g1█  $rt$g2█-----$bd$g2█$rt  $g3█-----$bd$g3█$rt  $g4█-----$bd$g4█$rt  $g5█-----$bd$g5█$rt  $g6█-----$bd$g6█$rt
+   $g1█---$bd$g1█$rt    $g2█---$bd$g2█$rt    $g3█---$bd$g3█$rt    $g4█---$bd$g4█$rt    $g5█---$bd$g5█$rt    $g6█---$bd$g6█$rt
+   $g1 █-$bd$g1█$rt     $g2 █-$bd$g2█$rt     $g3 █-$bd$g3█$rt     $g4 █-$bd$g4█$rt     $g5 █-$bd$g5█$rt     $g6 █-$bd$g6█$rt
+EOF
