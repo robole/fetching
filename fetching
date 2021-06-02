@@ -1,0 +1,179 @@
+#!/usr/bin/env bash
+
+# Name: fetching
+#
+# Description: A collection of "fetching" unicode art for the terminal.
+#
+# Author: Rob O'Leary
+
+full_path=$(realpath $0)
+dir_path=$(dirname $full_path)
+
+dir_scripts="${dir_path}/fetching-scripts"
+
+fmt_help="  %-20s\t%-54s\n"
+list_scripts_fpath=($(find "${dir_scripts}" -type f | sort)) # array
+list_scripts="$(find "${dir_scripts}" -type f | sort | xargs basename -a | nl)"
+length_scripts="$(find "${dir_scripts}" -type f | wc -l)"
+
+function _help() {
+    echo "Description: A collection of *fetching* unicode art for the terminal. You can choose an image to show, show one at random, or show them all as a slideshow."
+    echo ""
+    echo "Usage: fetching [OPTION] [SCRIPT NAME/INDEX/NUMBER OF SECONDS]"
+    printf "${fmt_help}" \
+        "-h, --help, help" "Print the help page." \
+				"-l, --list, list" "List all available scripts." \
+        "-r, --random, random" "Show a random image. It only picks image that fit within the terminal window." \
+        "-e, --exec, exec" "Show an image by SCRIPT NAME or INDEX." \
+				"-s, --slideshow, slideshow" "Run a slideshow showing a new image every NUMBER OF SECONDS. It is responsive to the terminal width." \
+				"-w, --width, width" "Show the terminal width. It is shown as a size e.g 'xs' for extra small,and as a width in columns. This can be used to grade the size of the output of your scripts."
+}
+
+function _list() {
+    echo "There are ${length_scripts} installed scripts:"
+    echo "${list_scripts}"
+}
+
+function _terminal_width() {
+   cols="$( _terminal_cols)"
+
+  if [[ $cols -lt 40  ]]; then
+		echo 'xs'
+  elif [[ $cols -ge 40 && $cols -lt 60  ]]; then
+		echo 's'
+  elif [[ $cols -ge 60 && $cols -lt 80  ]]; then
+		echo 'm'
+  elif [[ $cols -ge 80 && $cols -lt 100  ]]; then
+		echo 'l'
+  else
+   	echo 'xl'
+  fi
+}
+
+
+function _terminal_cols() {
+   cols="$( stty size | awk '{print $2}')"
+	 echo $cols
+}
+
+function _random() {
+	size=$(_terminal_width)
+	file_pattern=".*"
+
+	if [[ "$size" == "xs"  ]]; then
+		file_pattern=".*-xs$"
+	elif [[ "$size" == "s"  ]]; then
+		file_pattern=".*-(xs|s)$"
+	elif [[ $size == "m"  ]]; then
+		file_pattern=".*-(xs|s|m)$"
+	elif [[ $size == "l"  ]]; then
+		file_pattern=".*-(xs|s|m|l)$"
+	fi
+
+	files=($(find "${dir_scripts}" -type f | grep -P "${file_pattern}"))
+	num_of_files=${#files[@]}
+
+	declare -i random_index=$RANDOM%num_of_files
+	[[ $random_index -eq 0 ]] && random_index=1
+
+  random_script="${files["$random_index"]}"
+
+	 # uncomment next line to show filename
+	 # echo "  $(basename $random_script)"
+
+	 exec "${random_script}"
+}
+
+function _has_script() {
+    echo $(find "${dir_scripts}" -type f -name "$1")
+}
+
+function _run_by_name() {
+    if [[ "$1" == "random" ]]; then
+        _random
+    else
+				script=$(_has_script "$1")
+
+				if [[ -n "$script" ]]; then
+						exec "$script"
+				else
+						echo "Input error: No script innamed $1."
+          	exit 1
+				fi
+    fi
+}
+
+function _run_by_index() {
+    if [[ "$1" -gt 0 && "$1" -le "${length_scripts}" ]]; then
+				index=$(expr ${1} - 1)
+				script="${list_scripts_fpath["${index}"]}"
+        exec "${script}"
+    else
+        echo "Input error: No script indexed $1."
+        exit 1
+    fi
+}
+
+function _slideshow() {
+	 if [[ "$1" =~ ^[0-9]+$ ]]; then
+	    echo "  Press <CTRL+C> to exit."
+      while true
+			do
+			 	fetching random
+				sleep "$1s"
+			done;
+    else
+       echo "Input error. Must supply a number of seconds."
+       exit 1
+    fi
+
+}
+
+function _run_script() {
+    if [[ "$1" =~ ^[0-9]+$ ]]; then
+        _run_by_index "$1"
+    else
+        _run_by_name "$1"
+    fi
+}
+
+case "$#" in
+    0)
+        _help
+        ;;
+    1)
+        case "$1" in
+            -h | --help | help)
+                _help
+                ;;
+            -l | --list | list)
+                _list
+                ;;
+            -r | --random | random)
+                _random
+                ;;
+						-w | --width | width)
+                echo "size: $(_terminal_width)"
+								echo "$(_terminal_cols) columns wide"
+                ;;
+            *)
+                echo "Input error."
+                exit 1
+                ;;
+        esac
+        ;;
+    2)
+        if [[ "$1" == "-e" || "$1" == "--exec" || "$1" == "exec" ]]; then
+            _run_script "$2"
+				elif [[ "$1" == "-s" || "$1" == "--slideshow" || "$1" == "slideshow" ]]; then
+            _slideshow "$2"
+        else
+            echo "Input error."
+            exit 1
+        fi
+        ;;
+    *)
+        echo "Input error, too many arguments."
+        exit 1
+        ;;
+esac

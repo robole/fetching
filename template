@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+
+# ??
+#
+# Author: ?
+
+f=3 b=4
+
+for j in f b; do
+  for i in {0..7}; do
+    printf -v $j$i %b "\e[${!j}${i}m"
+  done
+done
+
+for i in {0..7}; do
+    printf -v g$i %b "\e[9${i}m"
+done
+
+# bold
+bd=$'\e[1m'
+
+# reset color
+rt=$'\e[0m'
+
+# invert color (swaps positive and negative spaces)
+iv=$'\e[7m'
+
+### SYMBOLS ###
+# BLOCKS:
+# full: █ ▓ ▒ ░
+# left (descending size): ▉ ▊ ▋ ▌ ▍ ▎ ▏
+# right: ▐  (half)▕  (1/8)
+# upper: ▀  (half)  ▔ (1/8)
+# lower (descending size): ▇ ▆ ▅ ▄ ▃ ▂ ▁
+# quadrants: ▖ (lower left) ▗  (lower right) ▘ (upper left) ▝  (upper right)
+
+# LINES:
+# horizontal: ▬ — ▬  ― ‗ … ˍ ⚊ ⚌ ⚍	⚎	⚏
+# slanted:        ⁄ ╱ ╲ ⁒
+# wavy: ˘ ⁐ ⁓ ⁔ ‿ 🜳 🝠 🝄 🝞 🝟 🝣 ⺁ ⺀ ⚞ ⚟ ♨ ◠◡ ◜◝◞◟☡
+
+# SHAPES:
+# circular: ● ◎ ◉ ◯ ◠ ◡    • ◐ ◑ ◒ ◓ Θ Ο ͻ ͼ ͽ Ѻ ˚ ⚬ ⚭	⚮ ⚯ ⚆	⚇ ⚈	⚉
+# triangular: ▲ ▼ ◄ ► ◀ ‣ ◢ ◤ ◥	◤◢   ◭ ◮	◺ Δ 🜁 	🜂 ⛬ 🜃 	🜄 	🜅 ⁂ ‸ ‹ 	›
+# quadilaterals: ■ ▨ ▤ ▥ ▩ ♢ ♦ ⛶ ▰ 🀆 🀫 ☐
+# stars: ★ ☆ ⛤ ⛥ ⛦ ⛧
+
+# BOXES:
+# double border: ═ ║ ╔ ╦ ╗ ╚ ╩ ╝
+# single border: ∟ ┌ ┐└ ┘
+# branches: ˦ ˧ ˨ ˪ ˫
+#
+# dots: ⁚ ⁘ ⁙ ⁛ ⁝ ⁞ ⁖ ⣰  see https://en.wikipedia.org/wiki/Braille_Patterns
+
+### COLORS ###
+# foreground:
+# f0=black, f1=red, f2=green, f3=yellow, f4=blue
+# f5=magenta, f6=cyan, f7=white
+#
+# g0=bright black, g1=bright red, g2=bright green, g3=bright yellow,
+# g4=bright blue, g5=bright magneta, g6=bright cyan, g7=bright white
+#
+# background:
+# b0=black, b1=red, b2=green, b3=yellow, b4=blue
+# b5=magenta, b6=cyan, b7=white
+
+# this is a 10x20 grid of blocks to start you off
+cat << EOF
+
+$f7████████████████████
+$f7████████████████████
+$f7████████████████████
+$f7████████████████████
+$f7████████████████████
+$f7████████████████████
+$f7████████████████████
+$f7████████████████████
+$f7████████████████████
+$f7████████████████████
+$rt
+EOF
+
