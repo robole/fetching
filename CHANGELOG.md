@@ -5,11 +5,22 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/-0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.0] - 2021-06-03
+## [0.2.0] - 2022-02-21
 
 ### Added
 
-- Initial release.
+- Added the following image scripts:
+	1. fetching-scripts/street/invader-alias-ny-142-m
+	1. fetching-scripts/street/invader-alladin-sane-clyde-s
+	1. fetching-scripts/street/invader-fire-flower-m
+	1. fetching-scripts/street/invader-donkey-kong-m
+
+## [0.1.0] - 2021-06-03
+
+Initial release.
+
+### Added
+
 - Contains the following image scripts:
   1. fetching-scripts/street/invader-obey-xs
   1. fetching-scripts/street/invader-dripping-xs
