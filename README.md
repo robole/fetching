@@ -21,7 +21,7 @@ The included image scripts are **responsive to the terminal window**. This preve
 
 ![garbled output](img/garbled.png)
 
-The included scripts are inspired by:
+There are **22 image scripts included** inspired by:
 
 - abstract art, particularly the [De Stijl movement](https://en.wikipedia.org/wiki/De_Stijl) with its simplified forms and limited palette
 
