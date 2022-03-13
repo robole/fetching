@@ -21,21 +21,18 @@ The included image scripts are **responsive to the terminal window**. This preve
 
 ![garbled output](img/garbled.png)
 
-The included scripts are inspired by:
+There are **22 image scripts included** inspired by:
 
 - abstract art, particularly the [De Stijl movement](https://en.wikipedia.org/wiki/De_Stijl) with its simplified forms and limited palette
 
   ![mondrian](img/mondrian.png)
-- computer games, particularly from the 1980's and 1990's
 
-  ![space invaders](img/space-invaders.png)
 - street art
 
   ![obey by invader](img/obey.png)
 
+- computer games, particularly from the 1980's and 1990's
 - star wars
-
-  ![groku](img/groku.png)
 
 I have a list of more images I would like to add (in *todo.md*). I will work through this when the mood strikes me!
 
@@ -77,15 +74,15 @@ The most common scenarios are:
 1. If you want to run a slideshow that cycles through images every 3 seconds, you can run `fetching -s 3`.
   ![slideshow](img/slideshow.gif)
 
-**I recommend using a monospace font**. Fonts with variable spacing may mess up the alignment of some of the art.
-
 ## Rendering differences between terminals
 
-I noticed that some terminals show the unicode output from the script with gaps. You can see Alacritty does this (bottom left in screenshot below).
+I noticed that some terminals show the unicode output from the script with gaps. You can see Alacritty previously did this (bottom left in screenshot below).
 
 ![terminal rendering differences](img/terminal-diff.png)
 
-I'm not sure if there is a setting that would tweak Alacritty to look the same way as Kitty. I use Kitty, so I'm not bothered to look! I think the uniform texture is more aesthetic, but you may like the blockier style!
+I am not sure why it is. It is specific to the terminal app.
+
+Generally, I would **recommend using a monospace font** for best results.
 
 ## Make your own art
 
@@ -115,66 +112,22 @@ The `rt` variable is used to reset the current color to the default text color. 
 
 You will notice that all image scripts have a *naming convention*. **The size is added as a postfix to enable the responsive behaviour** e.g. `mario-xs`. To find the width of the output, run your image script and reduce the width of the terminal until the output becomes distorted. You can run the command `fetching -w`to see what the current terminal size is. Set the name of the script based on this. Ensure that the output width does not exceed the range of that size. The sizes are: xs, s, m, l, and xl. I will see if I can do something to automate this process.
 
-If you find it difficult to create an image in this format, the process is similar to the patterns people design for cross-stitching. You could use someone else's pattern. See the [inspiration](#inspiration) section below for more on that.
-
-### Process
-
-You can create a reference image in one of the many pixel art editors. I like [piskel](https://www.piskelapp.com/). Its free to use, and you don't need to signup/login to use it. You can pick a grid size and play around with a composition. You don't want to do this with raw text in the script a lot of the time! 😅
-
-![piskel editor](img/editing-process/piskel.png)
-
-Once the composition is finished, I zoom in on the composition as to have it at a decent size, and take a screenshot. I do this because I want the grid lines included, if you export it from Piskel as an image, it does not include the gridlines!
-
-![exported](img/editing-process/export.png)
-
-Once you are ready to transform it to text, hop into your editor, and open the `template`. I set my windows up like this and it's quite quick to do it. I run the script in the terminal in VS Code to verify what I am doing. This mondrian image took approx 30 mins of editing in VS Code, whereas the mondrian lozenge image took me half a day to get right.
-
-![editing process](img/editing-process/windows.png)
-
-Be mindful that since you're using a "grid", you're editing text that is related in 2 dimensions! So, if you delete something from one line, it can knock your entire image out of wack. There are a few tricks I honed to minimise mistakes and become more efficient.
-
-I will speak about specific VS Code features, but most editors should have similar features:
-
-1. Use multipe cursors to make quick multi-line edits. Using Ctl+Shift+Down select multiple successive lines below.
-  ![multi-line edit](img/editing-process/multi-line-edit.gif)
-1. If you find yourself making bigger changes across multiple lines, you can switch to "column selection mode". You will find this in the menu by going `Selection` > `Column Selection Mode`. This allows you to make vertical edits. This is particularly useful for copying portions of text in the middle of lines that span across many lines.
-
-This may sound like a lot, but you can get the hang of it quite quickly if you enjoy playing around with the process. A custom editor would be nice for this of course, but it's quite a niche thing to make!
-
-## Inspiration
-
-The process for creating image patterns is similar to the patterns people design when making things with beads and cross-stitching. It's digital cross-stitching really! So if you search for these patterns, you may find something you like and the design work is done for you.
-
-Some resources I found useful are:
-
-- [Kandi Patterns](https://kandipatterns.com/)
-
-![yoda search kandi patterns](img/inspiration/yoda-kandi-patterns.png)
-
-- Search [pinterest](https://www.pinterest.com/) for cross-stitch patterns, and explore some [boards](https://www.pinterest.com/flowerthread/free-cross-stitch-patterns/).
-
-![pinterest patterns](img/inspiration/pinterest.png)
-
-You can also look at grafitti stencils are a source of inspiration. Designs with diagonal lines and circular shapes are a bit harder to pull off.
-
 ## Contribute
 
-If you have a suggestion, find a bug, or have made some image scripts that you would like to share, feel free to open an issue.
+If you have a suggestion, find a bug, or have made some image scripts that you would like to share, feel free to open an issue. I am bit fussy about what image scripts I would include, so it's prob best to ask before you make a PR.
 
-I am bit fussy about what image scripts I would include, so it's prob best to ask before you make a PR. I could add a "gallery" section here to point to your repo if you made some nice ones that others could include.
+## Appreciate
 
-The minimum prerequisites for accepting an image script are that it has to have:
-1. A blank line as the fist line,
-1. All lines have left padding of 2 spaces
-1. It resets the colors using `$rt` on the last line.
+You can show your appreciation by:
+1. [Buying me a coffee or sponsoring me](https://ko-fi.com/roboleary)
+1. Leaving a positive review in the [visual studio marketplace](<https://marketplace.visualstudio.com/items?itemName=robole.marky-stats&ssr=false#review-details>).
+1. Starring the repo 🌟.
 
-All of my image scripts are formatted consistently in this way. Generally, my images scripts are not too tall also. That's my taste.
+This will **help other people find the extension**.
 
-## Show gratitude
+It will **offer me encouragement** to continue, and can provide **a path to dedicating more time to open-source** in the future.
 
-If you are happy with this, please star the repo and recommend it to others.
-
-You can [buy me a coffee](https://Ko-fi.com/roboleary) if you would like to enable me to make more great open-source software and tutorials. 🍵🙏
+Thank you! 🙏
 
 ## Credit
 
