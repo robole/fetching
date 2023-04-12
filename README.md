@@ -1,15 +1,15 @@
 <h1 align="center">
+    <img align="center" src="img/logo.png" width="350" height="403" style="transform:scale(.75);" alt="Fetching logo">
   <br>
-    <img align="center" src="img/title/logo.png" width="301" alt="Fetching">
-  <br>
+	Fetching
 </h1>
 <p align="center"><strong>A collection of <i>fetching</i> unicode art for the terminal.</strong></p>
+
+The goal is to add a touch of beauty to your terminal, and trigger a sense of play.
 
 > You have to be in a state of play to design. If you're not in a state of play, you can't make anything.
 >
 > \- Paula Scher
-
-The goal is to add a touch of beauty to your terminal, and trigger a sense of play.
 
 ![mario example](img/mario-mytheme.png)
 
@@ -24,8 +24,6 @@ The included image scripts are **responsive to the terminal window**. This preve
 There are **22 image scripts included** inspired by:
 
 - abstract art, particularly the [De Stijl movement](https://en.wikipedia.org/wiki/De_Stijl) with its simplified forms and limited palette
-
-  ![mondrian](img/mondrian.png)
 
 - street art
 
@@ -74,15 +72,24 @@ The most common scenarios are:
 1. If you want to run a slideshow that cycles through images every 3 seconds, you can run `fetching -s 3`.
   ![slideshow](img/slideshow.gif)
 
-## Rendering differences between terminals
+## Contribute
 
-I noticed that some terminals show the unicode output from the script with gaps. You can see Alacritty previously did this (bottom left in screenshot below).
+If you have a suggestion, find a bug, or have made some image scripts that you would like to share (see [*Make your own art* section](#make-your-own-art)), feel free to open an issue.
 
-![terminal rendering differences](img/terminal-diff.png)
+I am bit fussy about what image scripts I would include, so it's prob best to ask before you make a PR.
 
-I am not sure why it is. It is specific to the terminal app.
+## Appreciate
 
-Generally, I would **recommend using a monospace font** for best results.
+You can show your appreciation by:
+1. [Buying me a coffee or sponsoring me](https://ko-fi.com/roboleary)
+1. Leaving a positive review in the [visual studio marketplace](<https://marketplace.visualstudio.com/items?itemName=robole.marky-stats&ssr=false#review-details>).
+1. Starring the repo 🌟.
+
+This will **help other people find the extension**.
+
+It will **offer me encouragement** to continue, and can provide **a path to dedicating more time to open-source** in the future.
+
+Thank you! 🙏
 
 ## Make your own art
 
@@ -112,22 +119,15 @@ The `rt` variable is used to reset the current color to the default text color. 
 
 You will notice that all image scripts have a *naming convention*. **The size is added as a postfix to enable the responsive behaviour** e.g. `mario-xs`. To find the width of the output, run your image script and reduce the width of the terminal until the output becomes distorted. You can run the command `fetching -w`to see what the current terminal size is. Set the name of the script based on this. Ensure that the output width does not exceed the range of that size. The sizes are: xs, s, m, l, and xl. I will see if I can do something to automate this process.
 
-## Contribute
+## Rendering differences between terminals
 
-If you have a suggestion, find a bug, or have made some image scripts that you would like to share, feel free to open an issue. I am bit fussy about what image scripts I would include, so it's prob best to ask before you make a PR.
+I noticed that some terminals show the unicode output from the script with gaps. You can see Alacritty previously did this (bottom left in screenshot below).
 
-## Appreciate
+![terminal rendering differences](img/terminal-diff.png)
 
-You can show your appreciation by:
-1. [Buying me a coffee or sponsoring me](https://ko-fi.com/roboleary)
-1. Leaving a positive review in the [visual studio marketplace](<https://marketplace.visualstudio.com/items?itemName=robole.marky-stats&ssr=false#review-details>).
-1. Starring the repo 🌟.
+I am not sure why it is. It is specific to the terminal app.
 
-This will **help other people find the extension**.
-
-It will **offer me encouragement** to continue, and can provide **a path to dedicating more time to open-source** in the future.
-
-Thank you! 🙏
+Generally, I would **recommend using a monospace font** for best results.
 
 ## Credit
 
