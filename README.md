@@ -6,11 +6,11 @@
 </h1>
 <p align="center"><strong>A collection of <i>fetching</i> unicode art for the terminal.</strong></p>
 
-The goal is to add a touch of beauty to your terminal, and trigger a sense of play.
-
 > You have to be in a state of play to design. If you're not in a state of play, you can't make anything.
 >
 > \- Paula Scher
+
+The goal is to add a touch of beauty to your terminal, and trigger a sense of play.
 
 ![mario example](img/mario-mytheme.png)
 
