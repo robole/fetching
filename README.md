@@ -1,6 +1,7 @@
 <h1 align="center">
     <img align="center" src="img/logo.webp" width="200px" alt="Fetching logo">
   <br>
+	<br>
 	Fetching
 </h1>
 <p align="center"><strong>A collection of <i>fetching</i> unicode art for the terminal.</strong></p>
