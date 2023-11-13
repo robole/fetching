@@ -14,9 +14,12 @@ The goal is to add a touch of beauty to your terminal, and trigger a sense of pl
 
 ![mario example](img/mario-mytheme.png)
 
-The art is **colored according to your terminal color theme**. Here are some examples side-by-side using different themes: the top-left theme is [Dracula](https://draculatheme.com/), the top-right is [Solarized](https://ethanschoonover.com/solarized/), the other two are just me playing around with colors! The output can have a different personality depending on your color theme.
+The art is **colored according to your terminal color theme**. The output can have a different personality depending on your color theme.
 
-![mario colored](img/mario-colors.png)
+<figure>
+<img src="img/mario-colors.png" alt="4 examples of how the mario-xs image script looks in different themes.">
+<figcaption>The <code>mario-xs</code> script using different color themes</figcaption>
+</figure>
 
 The included image scripts are **responsive to the terminal window**. This prevents distorted output in the random and slideshow modes. 🕶️
 
