@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img align="center" src="img/logo.webp" width="200px" alt="Fetching logo">
+    <img align="center" src="img/logo.webp" width="240px" alt="Fetching logo">
   <br>
 	<br>
 	Fetching
@@ -16,10 +16,7 @@ The goal is to add a touch of beauty to your terminal, and trigger a sense of pl
 
 The art is **colored according to your terminal color theme**. The output can have a different personality depending on your color theme.
 
-<figure>
-<img src="img/mario-colors.png" alt="4 examples of how the mario-xs image script looks in different themes.">
-<figcaption>The <code>mario-xs</code> script using different color themes</figcaption>
-</figure>
+<img src="img/mario-colors.png" alt="4 examples side-by-side of how the mario-xs image script using different color themes.">
 
 The included image scripts are **responsive to the terminal window**. This prevents distorted output in the random and slideshow modes. 🕶️
 
