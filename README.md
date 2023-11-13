@@ -1,6 +1,7 @@
 <h1 align="center">
-    <img align="center" src="img/logo.png" width="350" height="403" style="transform:scale(.75);" alt="Fetching logo">
+    <img align="center" src="img/logo.webp" width="200px" alt="Fetching logo">
   <br>
+	<br>
 	Fetching
 </h1>
 <p align="center"><strong>A collection of <i>fetching</i> unicode art for the terminal.</strong></p>
@@ -13,7 +14,7 @@ The goal is to add a touch of beauty to your terminal, and trigger a sense of pl
 
 ![mario example](img/mario-mytheme.png)
 
-The art is **colored according to your terminal color scheme**. Here are some examples side-by-side using different themes: the top-left theme is [Dracula](https://draculatheme.com/),the top-right is [Solarized](https://ethanschoonover.com/solarized/), the other two are just me playing around with colors! The output can have a different personality depending on your color scheme.
+The art is **colored according to your terminal color theme**. Here are some examples side-by-side using different themes: the top-left theme is [Dracula](https://draculatheme.com/), the top-right is [Solarized](https://ethanschoonover.com/solarized/), the other two are just me playing around with colors! The output can have a different personality depending on your color theme.
 
 ![mario colored](img/mario-colors.png)
 
