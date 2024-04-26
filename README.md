@@ -83,12 +83,9 @@ I am bit fussy about what image scripts I would include, so it's prob best to as
 
 You can show your appreciation by:
 1. [Buying me a coffee or sponsoring me](https://ko-fi.com/roboleary)
-1. Leaving a positive review in the [visual studio marketplace](<https://marketplace.visualstudio.com/items?itemName=robole.marky-stats&ssr=false#review-details>).
 1. Starring the repo 🌟.
 
-This will **help other people find the extension**.
-
-It will **offer me encouragement** to continue, and can provide **a path to dedicating more time to open-source** in the future.
+This will **help other people find this** and will **offer me encouragement** to make more.
 
 Thank you! 🙏
 
